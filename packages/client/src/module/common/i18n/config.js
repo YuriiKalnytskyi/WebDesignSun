@@ -28,9 +28,9 @@ i18next
     resources: {
       en: {
         translation: {
-          common: common_en,
+          common: common_en
         }
-      },
+      }
     },
     fallbackLng: initFallbackLang(),
     interpolation: {

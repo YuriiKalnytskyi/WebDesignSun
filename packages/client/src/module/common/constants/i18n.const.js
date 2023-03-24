@@ -1,3 +1,3 @@
 export const LANGUAGE_KEYS = {
-  EN: 'en',
+  EN: 'en'
 };

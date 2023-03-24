@@ -63,7 +63,7 @@ const user = {
 
 async function decodeToken(token) {
   try {
-    let decode = JWT.verify(token, config.JWT.secret.user.paymentsToken);
+    JWT.verify(token, config.JWT.secret.user.paymentsToken);
     return true;
   } catch (e) {
     if (e.name === JWT.TokenExpiredError.name) {

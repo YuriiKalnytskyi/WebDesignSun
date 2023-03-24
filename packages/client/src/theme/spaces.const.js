@@ -13,5 +13,5 @@ export const SPACES = {
   xs: '0.625rem',
   xxs: '0.5rem',
   xxxs: '0.375rem',
-  xxl_: '1.313rem',
+  xxl_: '1.313rem'
 };

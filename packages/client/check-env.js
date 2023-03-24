@@ -4,8 +4,8 @@ require('dotenv').config();
 
 const envSchema = {
   REACT_APP_ENV: Joi.string().required(),
-  REACT_APP_API_URL: Joi.string().required(),
-}
+  REACT_APP_API_URL: Joi.string().required()
+};
 
 const envVariables = process.env;
 
@@ -19,7 +19,9 @@ async function handleValidation() {
       }
     }
 
-    console.log(`✅ Success! Env[${process.env.REACT_APP_ENV}] validation was successfully passed! ✅`);
+    console.log(
+      `✅ Success! Env[${process.env.REACT_APP_ENV}] validation was successfully passed! ✅`
+    );
   } catch (e) {
     console.log('Environment variables validation failed. Check your dotenv variables:');
     console.error(e);

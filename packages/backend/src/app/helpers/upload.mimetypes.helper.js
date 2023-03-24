@@ -25,8 +25,5 @@ module.exports = {
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document' // DOC 2007
   ],
 
-  VIDEOS_MIMETYPES: [
-    'video/mpeg',
-    'video/mp4',
-  ]
+  VIDEOS_MIMETYPES: ['video/mpeg', 'video/mp4']
 };

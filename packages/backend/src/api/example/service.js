@@ -23,5 +23,5 @@ const example = {
 };
 
 module.exports = {
-  example,
+  example
 };

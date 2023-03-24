@@ -5,10 +5,10 @@ const schemas = {
     example: {
       post: Joi.object()
         .keys({
-          example: Joi.string().trim().required(),
+          example: Joi.string().trim().required()
         })
         .required()
-    },
+    }
   }
 };
 

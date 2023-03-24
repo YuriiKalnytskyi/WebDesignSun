@@ -5,7 +5,7 @@ import AppContainer from './module/app/app';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppContainer/>
+    <AppContainer />
   </React.StrictMode>,
   document.getElementById('root')
 );
