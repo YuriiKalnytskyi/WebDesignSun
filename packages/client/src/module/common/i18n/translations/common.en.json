@@ -1,0 +1,35 @@
+{
+  "something_went_wrong": "something went wrong",
+
+  "Footer": "++++++++++++++++++++++++++++",
+  "bloc_1_title": "Departments",
+  "bloc_1_text1": "Medical",
+  "bloc_1_text2": "Pharmaceuticals",
+  "bloc_1_text3": "Medical Equipment",
+
+  "bloc_2_title": "Quick Links",
+  "bloc_2_text1": "What do we do?",
+  "bloc_2_text2": "Our expertise",
+  "bloc_2_text3": "Request an Appointment",
+  "bloc_2_text4": "Book with a Specialist",
+
+  "bloc_3_title": "Head Office",
+  "bloc_3_text1": "4517 Washington Ave. Manchester, Kentucky 39495",
+  "bloc_3_text2": "darrell@mail.com",
+  "bloc_3_text3": "(671) 555-0110",
+
+  "text_logo":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras blandit tincidunt ut sed. Velit euismod integer convallis ornare eu.",
+  "text": "©2021 All Rights Reserved",
+
+  "Header": "++++++++++++++++++++++++++++++++++",
+  "help_text": "Need Help?",
+  "help_phone": "(514) 543-9936",
+
+  "nav_home": "Home",
+  "nav_services": "Services",
+  "nav_about": "About",
+  "nav_book": "Book now",
+  "nav_shop": "Shop",
+  "nav_blog": "Blog",
+  "nav_contact": "Contact"
+}
