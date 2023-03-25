@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components';
 import { COLORS, FONTS, SHADOWS, SPACES } from '../../../../theme';
 
 export const Container = styled.div`
+  width: fit-content;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;

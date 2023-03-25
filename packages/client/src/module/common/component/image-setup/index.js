@@ -23,7 +23,9 @@ export const ImageSetup = ({ label, avatar, handleAvatarUpload, delAvatar, readO
             <input id="field-upload" type="file" accept="image/*" onChange={onChange} title="" />
           </>
         )}
-        {avatar && !readOnly && <Styled.CloseButton onClick={delAvatar}>&#10006;</Styled.CloseButton>}
+        {avatar && !readOnly && (
+          <Styled.CloseButton onClick={delAvatar}>&#10006;</Styled.CloseButton>
+        )}
       </Styled.AvatarContainer>
     </Styled.OptionBlock>
   );

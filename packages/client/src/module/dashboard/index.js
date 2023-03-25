@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 
 import * as Styled from './dashboard.styled';
-import { Drawer } from '../common/component';
+import { Drawer, Pagination } from '../common/component';
 
 import { CreatePost } from './component/create-post';
-import { EditPost } from './component/edit-post';
+import { posts } from '../home';
+import { Table } from './component/table/table';
+
+import plus from '../../assets/icon/plus.svg';
+import { Create } from './constants';
 
 const Dashboard = () => {
+  const [page, setPage] = useState(1);
+
   const [isAddDrawerOpen, setIsAddDrawerOpen] = useState({
     flag: false,
     component: ''
@@ -23,21 +29,54 @@ const Dashboard = () => {
 
   return (
     <Styled.Container>
-      Dashboard
-      <button onClick={onDrawer.bind(this, true, 'create')}>open</button>
-      <button onClick={onDrawer.bind(this, true, 'edit')}>edit</button>
-      <button onClick={onDrawer.bind(this, true, 'view')}>view</button>
-      <Drawer
-        open={isAddDrawerOpen.flag}
-        onClose={onDrawer.bind(this, false, '')}
-        contentPosition='right'
-        slidePosition='right'
-      >
+      <Styled.Content>
+        <Styled.HeaderWrapper>
+          <Styled.HeaderTitle>
+            Post
+            {posts.length ? (
+              <Styled.ItemQuantatyBadge>
+                {posts.length} {posts.length === 1 ? 'item' : 'items'}
+              </Styled.ItemQuantatyBadge>
+            ) : null}
+          </Styled.HeaderTitle>
 
-        <CreatePost component={isAddDrawerOpen.component} onCloseDrawer={onDrawer.bind(this, false)} />
+          <Styled.SaveButton
+            width={'150px'}
+            content={'Create'}
+            type="submit"
+            variant="primary"
+            mb={'20px'}
+            startIcon={plus}
+            onClick={onDrawer.bind(this, true, Create)}
+          />
+        </Styled.HeaderWrapper>
 
+        {posts?.length ? <Table items={posts} /> : null}
 
-      </Drawer>
+        <div>
+          {30 && 30 > 10 ? (
+            <Pagination
+              totalCount={100}
+              pageSize={10}
+              siblingCount={1}
+              onPageChange={(num) => setPage(num)}
+              currentPage={page}
+            />
+          ) : null}
+        </div>
+
+        <Drawer
+          open={isAddDrawerOpen.flag}
+          onClose={onDrawer.bind(this, false, '')}
+          contentPosition="right"
+          slidePosition="right"
+        >
+          <CreatePost
+            component={isAddDrawerOpen.component}
+            onCloseDrawer={onDrawer.bind(this, false)}
+          />
+        </Drawer>
+      </Styled.Content>
     </Styled.Container>
   );
 };

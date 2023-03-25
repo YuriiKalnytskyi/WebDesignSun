@@ -14,7 +14,11 @@ export const Button = ({
   ml,
   mt,
   mb,
-  mr
+  mr,
+  startIcon,
+  endIcon,
+  widthIcon,
+  marginIcon
 }) => {
   return (
     <Styled.StyledButton
@@ -30,7 +34,26 @@ export const Button = ({
       disabled={disabled}
       variant={variant}
     >
+      {startIcon && (
+        <Styled.Icon
+          style={{
+            WebkitMaskImage: `url(${startIcon})`,
+            WebkitMaskSize: '100% 100%',
+            maskImage: `url(${startIcon})`
+          }}
+        />
+      )}
       {content}
+
+      {endIcon && (
+        <Styled.Icon
+          style={{
+            WebkitMaskImage: `url(${endIcon})`,
+            WebkitMaskSize: '100% 100%',
+            maskImage: `url(${endIcon})`
+          }}
+        />
+      )}
     </Styled.StyledButton>
   );
 };

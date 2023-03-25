@@ -10,6 +10,7 @@ export const COLORS = {
 
   gray50: '#F9FAFB',
   gray300: '#D0D5DD',
+  primary300: '#FCDEDE',
 
   primaryRed: '#EC091F',
   lightWhite: '#fdf2f2',
@@ -18,5 +19,6 @@ export const COLORS = {
   semiTransparentGrey: '#667085',
 
   ligthGreyBlue: '#d0d5dd',
-  blueGrey: '#667085'
+  blueGrey: '#667085',
+  gray900: '#101828'
 };

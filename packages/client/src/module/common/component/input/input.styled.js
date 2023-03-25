@@ -57,31 +57,29 @@ export const Input2 = styled.input`
 
   outline: none;
   transition: 0.5s;
-  
-  
-  
+
   ${({ readOnly }) =>
-  readOnly &&
-  css`
+    readOnly &&
+    css`
       &:focus-within {
         outline: ${({ readOnly }) => readOnly && 'none'};
       }
-  
+
       color: ${({ readOnly }) => readOnly && COLORS.blueGrey};
       cursor: ${({ readOnly }) => (readOnly ? 'initial' : 'pointer')};
       pointer-events: ${({ readOnly }) => (readOnly ? 'none' : 'initial')};
-      
-       && > label {
-          color: ${COLORS.dark};
-          transform: translateX(10px) translateY(-7px);
-          font-size: ${SPACES.xs};
-          padding: 0 ${SPACES.xs};
-          background: ${COLORS.white};
-          border-left: 1px solid ${COLORS.semiWhite};
-          border-right: 1px solid ${COLORS.semiWhite};
-          letter-spacing: 0.2em;
-       }
-   `}
+
+      && > label {
+        color: ${COLORS.dark};
+        transform: translateX(10px) translateY(-7px);
+        font-size: ${SPACES.xs};
+        padding: 0 ${SPACES.xs};
+        background: ${COLORS.white};
+        border-left: 1px solid ${COLORS.semiWhite};
+        border-right: 1px solid ${COLORS.semiWhite};
+        letter-spacing: 0.2em;
+      }
+    `}
 
   &&:valid ~ label,
   &&:focus ~ label {
@@ -106,10 +104,10 @@ export const Label2 = styled.label`
   pointer-events: none;
   color: rgba(22, 22, 22, 0.25);
   transition: 0.5s;
-  
-    ${({ readOnly }) =>
-  readOnly &&
-  css`
+
+  ${({ readOnly }) =>
+    readOnly &&
+    css`
       
           color: ${COLORS.dark};
           transform: translateX(10px) translateY(-7px);
@@ -123,7 +121,6 @@ export const Label2 = styled.label`
    `}
 `;
 
-
 export const Label = styled.label`
   position: relative;
   display: block;
@@ -132,11 +129,11 @@ export const Label = styled.label`
   font-size: ${FONTS.SIZES.m};
   text-transform: capitalize;
 
-  color: ${COLORS.semiTransparentWhite};
+  color: ${({ readOnly }) => (readOnly ? COLORS.blueGrey : COLORS.semiTransparentWhite)};
 
   ${({ required }) =>
-  required &&
-  css`
+    required &&
+    css`
       &::after {
         content: '*';
         right: 0;

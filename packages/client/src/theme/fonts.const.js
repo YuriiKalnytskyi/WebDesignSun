@@ -32,3 +32,10 @@ export const WEIGHTS = {
   extra_bold: '800',
   black: '900'
 };
+
+export const LINE_HEIGHTS = {
+  normal100: '1.22',
+  normal200: '1.27',
+  normal300: '1.43',
+  normal400: '1.5'
+};

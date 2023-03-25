@@ -6,26 +6,26 @@ import { SPACES } from '../../../../theme';
 import * as Styled from './input.styled';
 
 export const Input = ({
-                        name,
-                        label,
-                        gapFromLabel,
-                        textarea,
-                        checkbox,
-                        radio,
-                        withIcon,
-                        iconsStyles,
-                        innerPads,
-                        required,
-                        className,
-                        type = 'text',
-                        labelClassName,
-                        inputType = '1',
-                        readOnly,
-                        ml,
-                        mb,
-                        mr,
-                        mt
-                      }) => {
+  name,
+  label,
+  gapFromLabel,
+  textarea,
+  checkbox,
+  radio,
+  withIcon,
+  iconsStyles,
+  innerPads,
+  required,
+  className,
+  type = 'text',
+  labelClassName,
+  inputType = '1',
+  readOnly,
+  ml,
+  mb,
+  mr,
+  mt
+}) => {
   const [field, { touched, error }] = useField(name);
 
   const shoudRenderInput = !checkbox && !textarea && !radio;
@@ -53,7 +53,12 @@ export const Input = ({
   return (
     <Styled.Wrapper className={className} ml={ml} mb={mb} mr={mr} mt={mt}>
       {label && inputType === '1' && (
-        <Styled.Label required={required} htmlFor={name} className={labelClassName}>
+        <Styled.Label
+          required={required}
+          htmlFor={name}
+          className={labelClassName}
+          readOnly={readOnly}
+        >
           {label}
         </Styled.Label>
       )}
@@ -79,11 +84,11 @@ export const Input = ({
 
       {withIcon && React.createElement(withIcon, svgStyles)}
       {type === 'password' &&
-      (isPassword ? (
-        <Styled.Visibility top={inputType} onClick={onClickPassword} />
-      ) : (
-        <Styled.VisibilityOff top={inputType} onClick={onClickPassword} />
-      ))}
+        (isPassword ? (
+          <Styled.Visibility top={inputType} onClick={onClickPassword} />
+        ) : (
+          <Styled.VisibilityOff top={inputType} onClick={onClickPassword} />
+        ))}
 
       {touched && error && <Styled.Error>{i18next.t(error)}</Styled.Error>}
     </Styled.Wrapper>
