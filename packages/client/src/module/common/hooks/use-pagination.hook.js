@@ -55,7 +55,5 @@ export const usePagination = ({ totalCount, pageSize, siblingCount = 1, currentP
     return range(1, totalPageCount);
   }, [totalCount, pageSize, siblingCount, currentPage]);
 
-  console.log('======', paginationRange);
-
   return paginationRange;
 };

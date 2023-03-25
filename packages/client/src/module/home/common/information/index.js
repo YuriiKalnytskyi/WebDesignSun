@@ -7,7 +7,7 @@ import clock from '../../../../assets/icon/clock.svg';
 export const Information = ({ post, component = true }) => {
   return (
     <Styled.Container>
-      <Styled.Text color={!component && COLORS.white}>28 Feb 2021</Styled.Text>
+      <Styled.Text color={!component ? COLORS.white : COLORS.bodyText}>28 Feb 2021</Styled.Text>
       {component && (
         <>
           <Styled.Text color={COLORS.accent}>{post.author}</Styled.Text>

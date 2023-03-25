@@ -1,0 +1,1 @@
+import * as Yup from 'yup';import { validateSchema } from '../../common/validation/validateShema';export const validationSchemaCreate = Yup.object().shape({  direction: validateSchema.direction,  title: validateSchema.title,  description: validateSchema.description,  author: validateSchema.author});

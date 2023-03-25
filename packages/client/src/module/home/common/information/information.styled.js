@@ -14,7 +14,7 @@ export const Text = styled.div`
   font-weight: ${FONTS.WEIGHTS.normal};
   font-size: ${FONTS.SIZES.s};
   line-height: ${FONTS.SIZES.l};
-  color: ${(props) => props.color ?? COLORS.bodyText};
+  color: ${(props) => props.color};
   margin-right: ${SPACES.xxs};
 `;
 

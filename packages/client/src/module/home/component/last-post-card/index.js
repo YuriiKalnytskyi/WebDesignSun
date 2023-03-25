@@ -10,8 +10,8 @@ export const LastPostCard = ({ posts }) => {
       <Styled.Text>{i18next.t('common.latest_news')}</Styled.Text>
 
       {posts &&
-        posts.map((post) => (
-          <Styled.Post image={post.image} className="block">
+        posts.map((post, index) => (
+          <Styled.Post key={index} image={post.image} className="block">
             <Styled.Title>{post.title}</Styled.Title>
             <Information post={post} component={false} />
           </Styled.Post>

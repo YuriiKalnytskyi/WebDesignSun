@@ -68,8 +68,8 @@ const Home = () => {
 
         <Styled.PostsContainer>
           <Styled.PostsContent>
-            {posts.map((post) => (
-              <PostCard post={post} />
+            {posts.map((post, index) => (
+              <PostCard key={index} post={post} />
             ))}
           </Styled.PostsContent>
 

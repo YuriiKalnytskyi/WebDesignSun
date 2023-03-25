@@ -1,3 +1,4 @@
 export const ROUTER_KEYS = {
-  HOME: '/'
+  HOME: '/',
+  DASHBOARD: '/dashboard'
 };
