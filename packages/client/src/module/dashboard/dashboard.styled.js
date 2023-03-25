@@ -23,14 +23,13 @@ export const HeaderWrapper = styled.div`
   padding: 0 ${SPACES.l};
 `;
 
-export const HeaderTitle = styled.h4`
+export const HeaderTitle = styled.span`
   font-family: ${FONTS.FAMILIES.poppins};
-  font-weight: ${FONTS.WEIGHTS.semi_bold};
-  font-size: ${FONTS.SIZES.xxxxls};
-  line-height: ${FONTS.LINE_HEIGHTS.normal200};
+  // font-weight: ${FONTS.WEIGHTS.medium};
+  // font-size: ${FONTS.SIZES.s};
+  // line-height: ${FONTS.LINE_HEIGHTS.normal200};
   text-align: ${({ align }) => align ?? 'center'};
-  letter-spacing: ${({ lSpacing }) => lSpacing ?? 'normal'};
-
+/
   color: ${({ color }) => color ?? COLORS.gray900};
 `;
 

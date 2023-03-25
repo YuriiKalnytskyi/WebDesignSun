@@ -1,6 +1,11 @@
 {
+  "Error": "++++++++++++++++++++++++++++",
   "something_went_wrong": "something went wrong",
   "isRequired": "field is required",
+  "validateSchema_email_invalid": "Invalid email address",
+  "validateSchema_email_required": "Email is required",
+  "validateSchema_password_length": "Must be at least 8 characters.",
+  "validateSchema_password_required": "Password is required",
 
   "Footer": "++++++++++++++++++++++++++++",
   "bloc_1_title": "Departments",

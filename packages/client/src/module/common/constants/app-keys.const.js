@@ -1,4 +1,6 @@
 export const ROUTER_KEYS = {
   HOME: '/',
-  DASHBOARD: '/dashboard'
+  DASHBOARD: '/dashboard',
+  LOGIN: '/login',
+  SING_UP: '/sign-up'
 };

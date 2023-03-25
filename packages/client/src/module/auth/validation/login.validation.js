@@ -1,0 +1,1 @@
+import * as Yup from 'yup';import { validateSchema } from '../../common/validation/validateShema';export const loginValidation = Yup.object().shape({  email: validateSchema.email,  password: validateSchema.password});

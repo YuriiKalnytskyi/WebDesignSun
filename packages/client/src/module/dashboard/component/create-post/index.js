@@ -81,7 +81,7 @@ export const CreatePost = ({ onCloseDrawer, component }) => {
               label={'Author'}
               required
               mb={'25px'}
-              readOnly={component === 'view'}
+              readOnly={isView}
             />
 
             <Input
