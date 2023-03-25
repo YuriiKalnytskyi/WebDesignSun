@@ -4,5 +4,7 @@ export const COLORS = {
   dark: '#252525',
   bodyText: '#434343',
   secondary_Text: '#727272',
-  cards_BG: '#F5F5F5'
+  cards_BG: '#F5F5F5',
+
+  gray300: '#D0D5DD'
 };

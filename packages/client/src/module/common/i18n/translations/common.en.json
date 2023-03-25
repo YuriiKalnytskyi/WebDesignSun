@@ -31,5 +31,9 @@
   "nav_book": "Book now",
   "nav_shop": "Shop",
   "nav_blog": "Blog",
-  "nav_contact": "Contact"
+  "nav_contact": "Contact",
+
+
+  "Home_Page": "+++++++++++++++++++++++++++++",
+  "latest_news": "Our Latest News"
 }

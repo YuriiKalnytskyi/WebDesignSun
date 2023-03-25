@@ -3,6 +3,7 @@ export const SIZES = {
   lxxx: '2.375rem',
   lxx: '2rem',
   lx: '1.875rem',
+  xxxxls: '1.75rem',
   xxxxl: '1.5rem',
   xxxl: '1.375rem',
   xxl: '1.25rem',

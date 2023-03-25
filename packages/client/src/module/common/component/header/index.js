@@ -46,7 +46,10 @@ export const Header = () => {
           </Styled.HelpContainer>
         </Styled.HelpLogo>
 
-        <Styled.HelpContainer>{generationHTML(HeaderConst)}</Styled.HelpContainer>
+        <Styled.HelpContainer>
+          {generationHTML(HeaderConst)}
+          {/*jdjdj*/}
+        </Styled.HelpContainer>
       </Styled.Content>
     </Styled.Container>
   );

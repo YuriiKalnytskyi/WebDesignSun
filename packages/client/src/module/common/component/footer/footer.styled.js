@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLORS, SPACES, FONTS } from '../../../../theme';
+import { COLORS, SPACES, FONTS, MEDIA } from '../../../../theme';
 
 export const Container = styled.div`
   width: 100%;
@@ -10,15 +10,26 @@ export const Content = styled.div`
   width: 80%;
   margin: 0 auto;
   padding: 4rem 0 2.75rem 0;
-  // background: ${COLORS.accent};
 `;
 
 export const BlocContainer = styled.div`
-  display: flex;
+  width: 100%;
+
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(auto-fill, 24%);
+  grid-gap: 5px;
+
+  @media screen and (max-width: ${MEDIA.tablet_s}) {
+    grid-template-columns: repeat(auto-fill, 150px);
+  }
+  @media screen and (max-width: ${MEDIA.tablet}) {
+    grid-template-columns: repeat(auto-fill, 295px);
+  }
 `;
 
 export const Bloc = styled.div`
-  width: 25%;
+  min-width: 25%;
   display: flex;
   flex-direction: column;
 `;

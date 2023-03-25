@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLORS, FONTS, SPACES } from '../../../../theme';
+import { COLORS, FONTS, MEDIA, SPACES } from '../../../../theme';
 
 export const Container = styled.div`
   width: 100%;
@@ -18,6 +18,16 @@ export const Content = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: ${MEDIA.tablet_s}) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @media screen and (max-width: ${MEDIA.tablet}) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const HelpLogo = styled.div`
@@ -31,6 +41,16 @@ export const HelpContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
+  @media screen and (max-width: ${MEDIA.tablet_s}) {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  @media screen and (max-width: ${MEDIA.tablet}) {
+    width: 100%;
+    margin-left: 0px;
+  }
 `;
 
 export const HelpText = styled.span`
@@ -127,6 +147,16 @@ export const Li = styled.li`
   cursor: pointer;
 
   margin-left: 24px;
+
+  @media screen and (max-width: ${MEDIA.tablet_s}) {
+    margin-left: 0px;
+    margin-right: 20px;
+  }
+
+  @media screen and (max-width: ${MEDIA.tablet}) {
+    margin-left: 0px;
+    margin-right: 10px;
+  }
 
   display: flex;
   align-items: center;
