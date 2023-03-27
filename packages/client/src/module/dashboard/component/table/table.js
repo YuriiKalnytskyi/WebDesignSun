@@ -1,34 +1,13 @@
-import React, { useState } from 'react';
-
-import { Drawer } from '../../../common/component';
-import { CreatePost } from '../create-post';
-
+import React from 'react';
 import * as Styled from './table.styled';
 import { Edit, tableHeaders, View } from '../../constants';
 
 export const hasInArray = (arr, value) => {
   const items = arr.findIndex((item) => item.id === value);
-
   return items !== -1;
 };
 
-export const Table = ({ items }) => {
-  const [isAddDrawerOpen, setIsAddDrawerOpen] = useState({
-    flag: false,
-    component: '',
-    id: ''
-  });
-
-  const onDrawer = (flag, component = '', id) => {
-    setIsAddDrawerOpen((prev) => {
-      prev.flag = flag;
-      prev.component = component;
-      prev.id = id;
-
-      return { ...prev };
-    });
-  };
-
+export const Table = ({ items, onDrawer }) => {
   return (
     <>
       <Styled.Table>
@@ -49,7 +28,8 @@ export const Table = ({ items }) => {
         <Styled.Body>
           {items
             ? items.map(({ image, direction, title, author, description, id }, index) => (
-                <Styled.Row key={index} onClick={onDrawer.bind(this, true, View, id)}>
+                <Styled.Row key={index}
+                            onClick={onDrawer.bind(this,true, View,  id)}>
                   {/* item image */}
                   <Styled.Data>
                     <Styled.Wrapper>
@@ -116,18 +96,6 @@ export const Table = ({ items }) => {
         </Styled.Body>
       </Styled.Table>
 
-      <Drawer
-        open={isAddDrawerOpen.flag}
-        onClose={onDrawer.bind(this, false, '')}
-        contentPosition="right"
-        slidePosition="right"
-      >
-        <CreatePost
-          component={isAddDrawerOpen.component}
-          onCloseDrawer={onDrawer.bind(this, false)}
-          id={isAddDrawerOpen.id}
-        />
-      </Drawer>
     </>
   );
 };

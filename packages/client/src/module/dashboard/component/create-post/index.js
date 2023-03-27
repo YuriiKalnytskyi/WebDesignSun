@@ -53,7 +53,7 @@ export const CreatePost = ({ onCloseDrawer, component, id }) => {
     data,
     refetch,
     isLoading: isFindLoading
-  } = useQuery(QUERY_KEYS.FIND_POST, () => findPost(id), { onError });
+  } = useQuery(QUERY_KEYS.FIND_POST, () => findPost(id), { onError, enabled: !isCreate  });
 
   const isLoading = isFindLoading || isDeleteLoading;
 
@@ -85,16 +85,14 @@ export const CreatePost = ({ onCloseDrawer, component, id }) => {
   };
 
   useEffect(() => {
-    if (component === !isCreate) {
+    if (component !== isCreate) {
       refetch();
     }
-  }, [component]);
+  }, [component, id]);
 
   useEffect(() => {
     if (!isCreate) setAvatarString(data?.post?.image);
   }, [data]);
-
-  console.log(id, data);
 
   return (
     <AddEditLayout title={title} onCloseButtonClick={onCloseDrawer}>

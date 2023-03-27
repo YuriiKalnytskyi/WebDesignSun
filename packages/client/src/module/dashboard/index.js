@@ -23,14 +23,15 @@ const Dashboard = () => {
 
   const [isAddDrawerOpen, setIsAddDrawerOpen] = useState({
     flag: false,
-    component: ''
+    component: '',
+    id: ''
   });
 
-  const onDrawer = (flag, component = '') => {
+  const onDrawer = (flag, component = '', id) => {
     setIsAddDrawerOpen((prev) => {
       prev.flag = flag;
       prev.component = component;
-
+      prev.id = id
       return { ...prev };
     });
   };
@@ -109,7 +110,7 @@ const Dashboard = () => {
           />
         </Styled.HeaderWrapper>
 
-        {data?.posts?.length ? <Table items={data?.posts ?? []} /> : null}
+        {data?.posts?.length ? <Table onDrawer={onDrawer} items={data?.posts ?? []} /> : null}
 
         <div>
           {(data?.posts?.length && data?.posts?.length > data?.totalCount) || 10 ? (
@@ -125,13 +126,14 @@ const Dashboard = () => {
 
         <Drawer
           open={isAddDrawerOpen.flag}
-          onClose={onDrawer.bind(this, false, '')}
+          onClose={onDrawer.bind(this, false, 'ss', isAddDrawerOpen.id)}
           contentPosition="right"
           slidePosition="right"
         >
           <CreatePost
             component={isAddDrawerOpen.component}
-            onCloseDrawer={onDrawer.bind(this, false)}
+            onCloseDrawer={onDrawer.bind(this, false, 'aa', isAddDrawerOpen.id)}
+            id={isAddDrawerOpen.id}
           />
         </Drawer>
       </Styled.Content>
