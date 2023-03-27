@@ -27,13 +27,13 @@ const specificPost = {
       order: [['createdAt', 'DESC']]
     });
 
-    const numbers = helper.random.numbers(post.length);
+    const [one, tow] = helper.random.numbers(post.length, 2);
 
     return {
       success: true,
       result: {
-        lastPost: post.splice(0, 3),
-        randomPost: [post[numbers.one], post[numbers.tow]]
+        randomPost: [post[one], post[tow]],
+        lastPost: post.splice(0, 3)
       }
     };
   }
