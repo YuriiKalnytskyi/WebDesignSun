@@ -28,8 +28,7 @@ export const Table = ({ items, onDrawer }) => {
         <Styled.Body>
           {items
             ? items.map(({ image, direction, title, author, description, id }, index) => (
-                <Styled.Row key={index}
-                            onClick={onDrawer.bind(this,true, View,  id)}>
+                <Styled.Row key={index} onClick={onDrawer.bind(this, true, View, id)}>
                   {/* item image */}
                   <Styled.Data>
                     <Styled.Wrapper>
@@ -95,7 +94,6 @@ export const Table = ({ items, onDrawer }) => {
             : null}
         </Styled.Body>
       </Styled.Table>
-
     </>
   );
 };

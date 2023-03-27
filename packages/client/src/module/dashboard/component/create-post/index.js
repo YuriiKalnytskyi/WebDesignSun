@@ -53,7 +53,7 @@ export const CreatePost = ({ onCloseDrawer, component, id }) => {
     data,
     refetch,
     isLoading: isFindLoading
-  } = useQuery(QUERY_KEYS.FIND_POST, () => findPost(id), { onError, enabled: !isCreate  });
+  } = useQuery(QUERY_KEYS.FIND_POST, () => findPost(id), { onError, enabled: !isCreate });
 
   const isLoading = isFindLoading || isDeleteLoading;
 

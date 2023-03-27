@@ -31,7 +31,7 @@ const Dashboard = () => {
     setIsAddDrawerOpen((prev) => {
       prev.flag = flag;
       prev.component = component;
-      prev.id = id
+      prev.id = id;
       return { ...prev };
     });
   };
