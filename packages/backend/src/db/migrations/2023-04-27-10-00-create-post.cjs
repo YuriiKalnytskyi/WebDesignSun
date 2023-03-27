@@ -1,20 +1,18 @@
 module.exports = {
   up: (queryInterface, Sequelize) =>
-    queryInterface.createTable('Users', {
+    queryInterface.createTable('Posts', {
       id: {
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      email: {
-        type: Sequelize.STRING,
-        unique: true,
-        allowNull: false,
-      },
-      fullName: Sequelize.STRING,
-      password: Sequelize.STRING,
-      accessToken: Sequelize.TEXT,
+
+      author: Sequelize.STRING,
+      title: Sequelize.STRING,
+      direction: Sequelize.STRING,
+      image: Sequelize.STRING,
+      description: Sequelize.TEXT,
 
       createdAt: {
         type: Sequelize.DATE,
@@ -27,5 +25,5 @@ module.exports = {
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
     }),
-  down: (queryInterface) => queryInterface.dropTable('Users'),
+  down: (queryInterface) => queryInterface.dropTable('Posts'),
 };

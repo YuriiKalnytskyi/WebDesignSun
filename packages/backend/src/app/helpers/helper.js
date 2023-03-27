@@ -6,6 +6,8 @@ module.exports = {
   general: require('./general.helper'),
   controller: require('./controller.helper'),
   token: require('./token.helper'),
+  cloudinary: require('./cloudinary.helper'),
+  random: require('./random.helper'),
 
   middlewares: {
     auth: require('../middlewares/auth.handler'),

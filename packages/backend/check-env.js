@@ -14,16 +14,19 @@ const envSchema = {
   DB_PORT: Joi.number().required(),
 
   ACCESSTOKEN: Joi.string().required(),
-  REFRESHTOKEN: Joi.string().required(),
-  RESTOREPASSWORDTOKEN: Joi.string().required(),
+
+  USER_TYPE: Joi.string().required(),
+  ADMIN_TYPE: Joi.string().required(),
 
   LIFETIMEACCESSTOKEN: Joi.string().required(),
-  LIFETIMEREFRESHTOKEN: Joi.string().required(),
-  LIFETIMERESTOREPASSWORDTOKEN: Joi.string().required(),
 
-  MORGANBODY: Joi.boolean().required(),
+  MORGANBODY: Joi.string().required(),
   MORGAN_NAME: Joi.string().required(),
-  MORGAN_FORMAT: Joi.string().required()
+  MORGAN_FORMAT: Joi.string().required(),
+
+  CLOUDINARY_NAME: Joi.string().required(),
+  CLOUDINARY_API_KEY: Joi.string().required(),
+  CLOUDINARY_API_SECRET: Joi.string().required()
 };
 
 const envVariables = process.env;

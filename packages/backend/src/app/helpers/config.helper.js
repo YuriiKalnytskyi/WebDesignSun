@@ -65,18 +65,6 @@ config.paymentsInfo = {
   paymentCurrency: env.PAYMENTSCURRENCY
 };
 
-config.mailerInfo = {
-  user: env.MAILER_USER,
-  mailerApiKey: env.MAILER_API_KEY,
-  mailerTemplateId: env.MAILER_TEMPLATE_ID
-};
-
-config.mailerInfo = {
-  user: env.MAILER_USER,
-  mailerApiKey: env.MAILER_API_KEY,
-  mailerTemplateId: env.MAILER_TEMPLATE_ID
-};
-
 config.appleInfo = {
   bundleId: env.APP_BUNDLE_ID,
   keyId: env.APP_KEY_ID,

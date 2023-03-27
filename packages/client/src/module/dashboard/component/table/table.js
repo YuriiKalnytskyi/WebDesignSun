@@ -15,13 +15,15 @@ export const hasInArray = (arr, value) => {
 export const Table = ({ items }) => {
   const [isAddDrawerOpen, setIsAddDrawerOpen] = useState({
     flag: false,
-    component: ''
+    component: '',
+    id: ''
   });
 
   const onDrawer = (flag, component = '', id) => {
     setIsAddDrawerOpen((prev) => {
       prev.flag = flag;
       prev.component = component;
+      prev.id = id;
 
       return { ...prev };
     });
@@ -46,8 +48,8 @@ export const Table = ({ items }) => {
         </Styled.Head>
         <Styled.Body>
           {items
-            ? items.map(({ image, direction, title, author, description, id }) => (
-                <Styled.Row key={id} onClick={onDrawer.bind(this, true, View, id)}>
+            ? items.map(({ image, direction, title, author, description, id }, index) => (
+                <Styled.Row key={index} onClick={onDrawer.bind(this, true, View, id)}>
                   {/* item image */}
                   <Styled.Data>
                     <Styled.Wrapper>
@@ -111,6 +113,7 @@ export const Table = ({ items }) => {
         <CreatePost
           component={isAddDrawerOpen.component}
           onCloseDrawer={onDrawer.bind(this, false)}
+          id={isAddDrawerOpen.id}
         />
       </Drawer>
     </>

@@ -18,8 +18,8 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.img`
+  width: 45%;
   height: 100%;
-  aspect-ratio: 1 / 1;
 `;
 
 export const Content = styled.div`

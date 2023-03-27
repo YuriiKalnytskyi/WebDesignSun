@@ -42,10 +42,7 @@ const errorCode = {
   adminRights: 180,
 
   // PaymentsInvalid
-  paymentsInvalid: 190,
-
-  // paymentsTimeOff
-  paymentsTimeOff: 191
+  imageInvalid: 190
 };
 
 const error = {
@@ -62,7 +59,7 @@ const error = {
     return res.status(StatusCodes.NOT_FOUND).json({
       statusCode: StatusCodes.NOT_FOUND,
       success: false,
-      message: 'Паролі не збігаються',
+      message: 'Passwords do not match',
       error: 'Bad request',
       errorCode: errorCode.validation
     });
@@ -145,42 +142,23 @@ const error = {
     };
   },
 
-  passwordNotConcur: () => {
+  postNotFound: () => {
     return {
-      statusCode: StatusCodes.CONFLICT,
+      statusCode: StatusCodes.NOT_FOUND,
       success: false,
-      message: 'Паролі не збігаються.',
-      error: 'password not concur',
-      errorCode: errorCode.passwordNotConcur
+      message: 'Post was not found.',
+      error: 'Post not found',
+      errorCode: errorCode.accountNotFound
     };
   },
 
-  adminRights: (res) => {
-    return res.status(StatusCodes.CONFLICT).json({
-      success: false,
-      message: 'У вас немає прав адміністратора.',
-      error: 'You dont have administrator rights',
-      errorCode: errorCode.adminRights
-    });
-  },
-
-  paymentsInvalid: () => {
+  imageInvalid: () => {
     return {
-      statusCode: StatusCodes.CONFLICT,
+      statusCode: StatusCodes.NOT_FOUND,
       success: false,
-      message: 'Щоб авторизуватись вам потрібно оплатити',
-      error: 'Щоб авторизуватись вам потрібно оплатити',
-      errorCode: errorCode.paymentsInvalid
-    };
-  },
-
-  paymentsTimeOff: (url) => {
-    return {
-      statusCode: StatusCodes.CONFLICT,
-      success: false,
-      message: `${url}`,
-      error: 'У вас закінчилась підписка, оплатіть щоб продовжити її.',
-      errorCode: errorCode.paymentsTimeOff
+      message: 'Image invalid',
+      error: 'Image invalid',
+      errorCode: errorCode.imageInvalid
     };
   }
 };

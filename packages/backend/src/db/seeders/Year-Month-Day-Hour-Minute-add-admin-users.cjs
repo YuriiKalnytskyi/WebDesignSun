@@ -7,11 +7,15 @@ module.exports = {
       [
         {
           email: 'admin@gmail.com',
-          firstName: 'admin',
-          lastName: 'admin',
-          password: bcrypt.hashSync('admin', 10),
+          fullName: 'admin',
+          password: bcrypt.hashSync('qwerty123', 10),
           accessToken: '',
-          role: 'ADMIN',
+        },
+        {
+          email: 'admin2@gmail.com',
+          fullName: 'admin2',
+          password: bcrypt.hashSync('qwerty123', 10),
+          accessToken: '',
         },
       ]
     );
