@@ -2,12 +2,12 @@ const { controller } = require('../../app/helpers/helper');
 const { StatusCodes } = require('http-status-codes');
 const service = require('./service');
 
-const registration = {
+const singIn = {
   post: async (req, res) => {
     await controller.sendJson(
       res,
       async (connection) => {
-        return await service.registration.post(connection, req.options);
+        return await service.singIn.post(connection, req.options);
       },
       StatusCodes.CREATED
     );
@@ -31,7 +31,7 @@ const logout = {
 };
 
 module.exports = {
-  registration,
+  singIn,
   login,
   logout
 };

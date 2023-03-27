@@ -15,11 +15,20 @@ export const Container = styled.div`
     width: 100%;
     flex-direction: column;
   }
+
+  @media screen and (max-width: ${MEDIA.laptop}) {
+    width: 100%;
+    flex-direction: column;
+  }
 `;
 
 export const Image = styled.img`
   width: 45%;
   height: 100%;
+
+  @media screen and (max-width: ${MEDIA.laptop}) {
+    width: 100%;
+  }
 `;
 
 export const Content = styled.div`

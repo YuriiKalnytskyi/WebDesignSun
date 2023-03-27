@@ -64,10 +64,22 @@ export const Table = ({ items }) => {
                   </Styled.Data>
 
                   {/* item direction */}
-                  <Styled.Data>{author}</Styled.Data>
+                  <Styled.Data className="title">
+                    <Styled.ItemLabel className="tooltip" linesToTruncate={1} tooltipText={author}>
+                      {author}
+                    </Styled.ItemLabel>
+                  </Styled.Data>
 
                   {/* item direction */}
-                  <Styled.Data>{direction}</Styled.Data>
+                  <Styled.Data className="title">
+                    <Styled.ItemLabel
+                      className="tooltip"
+                      linesToTruncate={1}
+                      tooltipText={direction}
+                    >
+                      {direction}
+                    </Styled.ItemLabel>
+                  </Styled.Data>
 
                   {/* item title */}
                   <Styled.Data className="title">

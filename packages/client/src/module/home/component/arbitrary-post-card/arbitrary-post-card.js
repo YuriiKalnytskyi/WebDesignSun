@@ -14,6 +14,10 @@ export const Container = styled.div`
   @media screen and (max-width: ${MEDIA.tablet}) {
     flex-direction: column;
   }
+
+  @media screen and (max-width: ${MEDIA.laptop}) {
+    flex-direction: column;
+  }
 `;
 
 export const Image = styled.img`
@@ -27,17 +31,24 @@ export const Image = styled.img`
   @media screen and (max-width: ${MEDIA.tablet}) {
     width: 100%;
   }
+
+  @media screen and (max-width: ${MEDIA.laptop}) {
+    width: 100%;
+  }
 `;
 
 export const Content = styled.div`
   width: 30%;
   padding: ${SPACES.lxx} ${SPACES.xxxxl};
 
-  @media screen and (max-width: ${MEDIA.tablet}) {
+  @media screen and (min-width: ${MEDIA.tablet}) {
     width: 100%;
   }
 
   @media screen and (max-width: ${MEDIA.tablet}) {
+    width: 100%;
+  }
+  @media screen and (max-width: ${MEDIA.laptop}) {
     width: 100%;
   }
 `;

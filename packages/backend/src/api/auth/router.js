@@ -8,7 +8,7 @@ const controller = require('./controller');
 router.post(
   '/sing-in',
   validator.main(schemas.router.registration.post),
-  asyncHandler(controller.registration.post)
+  asyncHandler(controller.singIn.post)
 );
 
 router.post(

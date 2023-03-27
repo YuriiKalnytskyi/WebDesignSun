@@ -1,30 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Form, Formik } from 'formik';
 import { useHistory } from 'react-router-dom';
+import { useMutation } from 'react-query';
+import toast from 'react-hot-toast';
 
 import { Input, Loader } from '../../../common/component';
 import { COLORS } from '../../../../theme';
-import { ROUTER_KEYS } from '../../../common/constants/app-keys.const';
+import { ROUTER_KEYS } from '../../../common/constants';
 import { singUpValidation } from '../../validation/sing-up.validation';
 
 import * as Styled from '../login/login.styled';
 import { inputsSingIn } from '../../constants';
+import { singIn } from '../../../../services/authServise';
 
 const SingUp = () => {
   const history = useHistory();
 
-  const [isShowLoader, setIsShowLoader] = useState(false);
+  const onError = (res) => {
+    toast.error(res.response.data.message);
+  };
 
-  useEffect(() => {
-    if (isShowLoader) {
-      setTimeout(() => {
-        setIsShowLoader(false);
-      }, 5000);
-    }
-  }, [isShowLoader]);
+  const onSuccess = () => {
+    history.push(ROUTER_KEYS.LOGIN);
+  };
+
+  const { mutate, isLoading } = useMutation((req) => singIn(req), { onSuccess, onError });
 
   const onSubmit = (data) => {
-    setIsShowLoader(true);
+    mutate(data);
   };
 
   return (
@@ -54,13 +57,13 @@ const SingUp = () => {
 
               <Styled.SaveButton
                 content={
-                  !isShowLoader ? (
+                  !isLoading ? (
                     'Save'
                   ) : (
                     <Loader size="small" color={COLORS.primaryRed} height="auto" />
                   )
                 }
-                disabled={isShowLoader}
+                disabled={isLoading}
                 type="submit"
                 variant="primary"
                 mb={'20px'}

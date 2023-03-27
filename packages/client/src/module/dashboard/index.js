@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { useQuery } from 'react-query';
+import { useMutation, useQuery } from 'react-query';
+import { useHistory } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
 import { Drawer, Loading, Pagination } from '../common/component';
 import { CreatePost } from './component/create-post';
 import { Table } from './component/table/table';
 import { Create } from './constants';
-import { QUERY_KEYS } from '../common/constants';
+import { QUERY_KEYS, ROUTER_KEYS } from '../common/constants';
 import { getAllPost } from '../../services/postServise';
+import { logout } from '../../services/authServise';
 
 import plus from '../../assets/icon/plus.svg';
 
 import * as Styled from './dashboard.styled';
 
 const Dashboard = () => {
+  const history = useHistory();
+
   const [page, setPage] = useState(1);
+  const [isLoadingUser, setIsLoadingUser] = useState(true);
 
   const [isAddDrawerOpen, setIsAddDrawerOpen] = useState({
     flag: false,
@@ -30,13 +35,28 @@ const Dashboard = () => {
     });
   };
 
+  const onSuccess = () => {
+    history.push(ROUTER_KEYS.LOGIN);
+  };
+
   const onError = (res) => {
     toast.error(res.response.data.message);
   };
 
-  const { data, refetch, isLoading } = useQuery(QUERY_KEYS.ALL_POST, () => getAllPost(page, 6), {
+  const {
+    data,
+    refetch,
+    isLoading: isLoadingAllPost
+  } = useQuery(QUERY_KEYS.ALL_POST, () => getAllPost(page, 6), {
     onError
   });
+
+  const { mutate } = useMutation(logout, { onSuccess, onError });
+
+  const onLogout = () => {
+    localStorage.removeItem('accessToken');
+    mutate();
+  };
 
   const onPage = (num) => {
     setPage(num);
@@ -46,8 +66,27 @@ const Dashboard = () => {
     refetch();
   }, [page]);
 
+  useEffect(() => {
+    setIsLoadingUser(true);
+    const accessToken = localStorage.getItem('accessToken');
+
+    if (!accessToken) history.push(ROUTER_KEYS.LOGIN);
+
+    setIsLoadingUser(false);
+  }, []);
+
+  const isLoading = isLoadingAllPost || isLoadingUser;
+
   return (
     <Styled.Container>
+      <Styled.SaveButton
+        width={'150px'}
+        content={'Logout'}
+        type="submit"
+        variant="primary"
+        mb={'20px'}
+        onClick={onLogout}
+      />
       <Styled.Content>
         <Styled.HeaderWrapper>
           <Styled.HeaderTitle>

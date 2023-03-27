@@ -1,6 +1,5 @@
 const helper = require('../../app/helpers/helper');
 
-
 const allPost = {
   get: async (connection, options) => {
     const limit = options.offset;
@@ -8,7 +7,8 @@ const allPost = {
 
     const { count: totalCount, rows: posts } = await connection.Posts.findAndCountAll({
       offset: offset,
-      limit: limit
+      limit: limit,
+      order: [['createdAt', 'DESC']]
     });
 
     return {
@@ -23,20 +23,17 @@ const allPost = {
 
 const specificPost = {
   get: async (connection) => {
-
     const post = await connection.Posts.findAll({
-      order: [
-        ['createdAt', 'DESC'],
-      ],
-    })
+      order: [['createdAt', 'DESC']]
+    });
 
-    const numbers = helper.random.numbers(post.length)
+    const numbers = helper.random.numbers(post.length);
 
     return {
       success: true,
       result: {
-        lastPost: post.splice(0,3),
-        randomPost: [post[numbers.one],  post[numbers.tow]]
+        lastPost: post.splice(0, 3),
+        randomPost: [post[numbers.one], post[numbers.tow]]
       }
     };
   }

@@ -11,10 +11,7 @@ router.get(
   asyncHandler(controller.allPost.get)
 );
 
-router.get(
-  '/specific',
-  asyncHandler(controller.specificPost.get)
-);
+router.get('/specific', asyncHandler(controller.specificPost.get));
 
 router.post('/', validator.main(schemas.router.post.post), asyncHandler(controller.post.post));
 

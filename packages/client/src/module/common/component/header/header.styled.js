@@ -28,6 +28,11 @@ export const Content = styled.div`
     flex-direction: column;
     align-items: flex-start;
   }
+
+  @media screen and (max-width: ${MEDIA.laptop}) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const HelpLogo = styled.div`
@@ -48,6 +53,11 @@ export const HelpContainer = styled.div`
   }
 
   @media screen and (max-width: ${MEDIA.tablet}) {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  @media screen and (max-width: ${MEDIA.laptop}) {
     width: 100%;
     margin-left: 0px;
   }
@@ -95,7 +105,9 @@ export const Menu = styled.ul`
       min-width: 150px;
       padding: 12px 14px;
       height: fit-content;
-      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.100361);
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.100361);
+      background-color: ${COLORS.white};
+      border-bottom: 1px solid ${COLORS.cards_BG};
 
       & a {
         color: ${COLORS.dark};
@@ -154,6 +166,11 @@ export const Li = styled.li`
   }
 
   @media screen and (max-width: ${MEDIA.tablet}) {
+    margin-left: 0px;
+    margin-right: 10px;
+  }
+
+  @media screen and (max-width: ${MEDIA.laptop}) {
     margin-left: 0px;
     margin-right: 10px;
   }

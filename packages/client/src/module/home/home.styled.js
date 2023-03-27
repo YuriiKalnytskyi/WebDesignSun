@@ -18,6 +18,9 @@ export const Content = styled.div`
   @media screen and (max-width: ${MEDIA.tablet}) {
     flex-direction: column;
   }
+  @media screen and (max-width: ${MEDIA.laptop}) {
+    flex-direction: column;
+  }
 `;
 
 export const PostsContainer = styled.div`
@@ -47,5 +50,9 @@ export const PostsContent = styled.div`
 
   @media screen and (max-width: ${MEDIA.tablet}) {
     grid-template-columns: repeat(auto-fill, 48%);
+  }
+
+  @media screen and (max-width: ${MEDIA.laptop}) {
+    grid-template-columns: repeat(auto-fill, 40%);
   }
 `;

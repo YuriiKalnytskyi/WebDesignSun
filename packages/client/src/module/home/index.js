@@ -20,9 +20,9 @@ const Home = () => {
     onError
   });
 
-  const { data: specificPosts } = useQuery(QUERY_KEYS.ALL_POST_SPECIFIC,  getAllSpecificPost, { onError });
-
-  console.log(specificPosts?.randomPost);
+  const { data: specificPosts } = useQuery(QUERY_KEYS.ALL_POST_SPECIFIC, getAllSpecificPost, {
+    onError
+  });
 
   const onPage = (num) => {
     setPage(num);

@@ -1,32 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Form, Formik } from 'formik';
 import { useHistory } from 'react-router-dom';
+import { useMutation } from 'react-query';
+import toast from 'react-hot-toast';
 
 import { Input, Loader } from '../../../common/component';
 import { COLORS } from '../../../../theme';
 import { loginValidation } from '../../validation';
-import { ROUTER_KEYS } from '../../../common/constants/app-keys.const';
+import { ROUTER_KEYS } from '../../../common/constants';
 import { inputsLogin } from '../../constants';
 import * as Styled from './login.styled';
+import { login } from '../../../../services/authServise';
 
 const Login = () => {
   const history = useHistory();
 
-  const [isShowLoader, setIsShowLoader] = useState(false);
+  const onError = (res) => {
+    toast.error(res.response.data.message);
+  };
 
-  useEffect(() => {
-    if (isShowLoader) {
-      setTimeout(() => {
-        setIsShowLoader(false);
-      }, 5000);
-    }
-  }, [isShowLoader]);
+  const onSuccess = ({ accessToken }) => {
+    localStorage.setItem('accessToken', accessToken);
+    history.push(ROUTER_KEYS.DASHBOARD);
+  };
+
+  const { mutate, isLoading } = useMutation((req) => login(req), { onSuccess, onError });
 
   const onSubmit = (data) => {
-    setIsShowLoader(true);
-    // console.log(data);
-    //
-    // onCloseDrawer();
+    mutate(data);
   };
 
   return (
@@ -56,13 +57,13 @@ const Login = () => {
 
               <Styled.SaveButton
                 content={
-                  !isShowLoader ? (
+                  !isLoading ? (
                     'Save'
                   ) : (
                     <Loader size="small" color={COLORS.primaryRed} height="auto" />
                   )
                 }
-                disabled={isShowLoader}
+                disabled={isLoading}
                 type="submit"
                 variant="primary"
                 mb={'20px'}

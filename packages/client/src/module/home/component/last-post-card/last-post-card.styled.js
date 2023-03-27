@@ -17,6 +17,11 @@ export const Container = styled.div`
     width: 100%;
     padding-left: 0;
   }
+
+  @media screen and (max-width: ${MEDIA.laptop}) {
+    width: 100%;
+    padding-left: 0;
+  }
 `;
 
 export const Text = styled.div`

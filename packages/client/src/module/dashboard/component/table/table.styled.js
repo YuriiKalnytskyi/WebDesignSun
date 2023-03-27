@@ -123,7 +123,7 @@ export const EditIcon = styled(EditSvgIcon)`
 
 export const ItemImage = styled.img`
   width: 2.5rem;
-  height: 2.5rem;
+  aspect-ratio: 1 / 1;
   margin-left: ${SPACES.s};
 
   object-position: center;
