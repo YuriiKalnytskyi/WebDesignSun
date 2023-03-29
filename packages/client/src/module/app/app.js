@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { ThemeProvider } from 'styled-components';
+// import { ThemeProvider } from 'styled-components';
 import { QueryCache, QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import toast, { Toaster } from 'react-hot-toast';
 
 import i18next from '../common/i18n/config';
 
-import * as theme from '../../theme';
+// import * as theme from '../../theme';
 import * as Styled from './app.styled';
 import { MainRouter } from '../navigation';
 
@@ -36,14 +36,16 @@ const env = process.env.REACT_APP_ENV;
 
 const AppContainer = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <Styled.GlobalStyles />
+    <>
+       {/*<ThemeProvider theme={theme}>*/}
+    <Styled.GlobalStyles />
       <QueryClientProvider client={queryClient}>
         <MainRouter />
         {env === 'local' || env === 'dev' ? <ReactQueryDevtools initialIsOpen={false} /> : null}
-        <Toaster position="top-right" reverseOrder />
+        <Toaster position='top-right' reverseOrder />
       </QueryClientProvider>
-    </ThemeProvider>
+      {/*</ThemeProvider>*/}
+     </>
   );
 };
 export default AppContainer;
