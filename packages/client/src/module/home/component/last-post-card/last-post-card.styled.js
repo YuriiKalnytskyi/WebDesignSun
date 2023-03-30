@@ -37,7 +37,7 @@ export const Title = styled.div`
   font-family: ${FONTS.FAMILIES.poppins};
   font-weight: ${FONTS.WEIGHTS.medium};
   font-size: ${FONTS.SIZES.xl};
-  line-height: ${FONTS.SIZES.xxxl};
+  line-height: 27px;
   color: ${COLORS.white};
 `;
 

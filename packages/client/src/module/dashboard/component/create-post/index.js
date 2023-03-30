@@ -85,14 +85,15 @@ export const CreatePost = ({ onCloseDrawer, component, id }) => {
   };
 
   useEffect(() => {
-    if (component !== isCreate) {
+    if (!isCreate) {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       refetch();
     }
-  }, [component, id]);
+  }, [isCreate, id]);
 
   useEffect(() => {
     if (!isCreate) setAvatarString(data?.post?.image);
-  }, [data]);
+  }, [data, isCreate]);
 
   return (
     <AddEditLayout title={title} onCloseButtonClick={onCloseDrawer}>

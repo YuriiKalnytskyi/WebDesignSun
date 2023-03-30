@@ -37,15 +37,15 @@ const env = process.env.REACT_APP_ENV;
 const AppContainer = () => {
   return (
     <>
-       {/*<ThemeProvider theme={theme}>*/}
-    <Styled.GlobalStyles />
+      {/*<ThemeProvider theme={theme}>*/}
+      <Styled.GlobalStyles />
       <QueryClientProvider client={queryClient}>
         <MainRouter />
         {env === 'local' || env === 'dev' ? <ReactQueryDevtools initialIsOpen={false} /> : null}
-        <Toaster position='top-right' reverseOrder />
+        <Toaster position="top-right" reverseOrder />
       </QueryClientProvider>
       {/*</ThemeProvider>*/}
-     </>
+    </>
   );
 };
 export default AppContainer;

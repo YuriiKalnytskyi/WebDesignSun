@@ -25,11 +25,11 @@ export const HeaderWrapper = styled.div`
 
 export const HeaderTitle = styled.span`
   font-family: ${FONTS.FAMILIES.poppins};
-  // font-weight: ${FONTS.WEIGHTS.medium};
-  // font-size: ${FONTS.SIZES.s};
-  // line-height: ${FONTS.LINE_HEIGHTS.normal200};
+  font-weight: ${FONTS.WEIGHTS.medium};
+  font-size: ${FONTS.SIZES.s};
+  line-height: ${FONTS.LINE_HEIGHTS.normal200};
   text-align: ${({ align }) => align ?? 'center'};
-/
+
   color: ${({ color }) => color ?? COLORS.gray900};
 `;
 

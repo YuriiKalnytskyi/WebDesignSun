@@ -35,17 +35,17 @@ export const Pagination = ({ currentPage, onPageChange, pageSize, totalCount, si
 
   return (
     <Styled.Container>
-      {!isFirstPage && (
-        <Styled.PrevPageButton onClick={onPrevious}>
-          <Styled.Icon
-            style={{
-              WebkitMaskImage: `url(${arrowLeft})`,
-              WebkitMaskSize: '100% 100%',
-              maskImage: `url(${arrowLeft})`
-            }}
-          />
-        </Styled.PrevPageButton>
-      )}
+      {/*{!isFirstPage && (*/}
+      <Styled.PrevPageButton disabled={isFirstPage} onClick={onPrevious}>
+        <Styled.Icon
+          style={{
+            WebkitMaskImage: `url(${arrowLeft})`,
+            WebkitMaskSize: '100% 100%',
+            maskImage: `url(${arrowLeft})`
+          }}
+        />
+      </Styled.PrevPageButton>
+      {/*)}*/}
 
       <Styled.PaginateButtonsList>
         {paginationRange?.map((pageNumber, index) => {
@@ -67,17 +67,17 @@ export const Pagination = ({ currentPage, onPageChange, pageSize, totalCount, si
           );
         })}
       </Styled.PaginateButtonsList>
-      {!isLastPage && (
-        <Styled.PrevPageButton onClick={onNext}>
-          <Styled.Icon
-            style={{
-              WebkitMaskImage: `url(${arrowRight})`,
-              WebkitMaskSize: '100% 100%',
-              maskImage: `url(${arrowRight})`
-            }}
-          />
-        </Styled.PrevPageButton>
-      )}
+      {/*{!isLastPage && (*/}
+      <Styled.PrevPageButton onClick={onNext} disabled={isLastPage}>
+        <Styled.Icon
+          style={{
+            WebkitMaskImage: `url(${arrowRight})`,
+            WebkitMaskSize: '100% 100%',
+            maskImage: `url(${arrowRight})`
+          }}
+        />
+      </Styled.PrevPageButton>
+      {/*)}*/}
     </Styled.Container>
   );
 };

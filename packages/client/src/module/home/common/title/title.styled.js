@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { COLORS, FONTS } from '../../../../theme';
 
 export const Text = styled.div`
@@ -7,4 +7,13 @@ export const Text = styled.div`
   font-size: ${FONTS.SIZES.xxxl};
   line-height: ${FONTS.SIZES.lxxs};
   color: ${COLORS.dark};
+
+  ${({ component }) =>
+    component &&
+    css`
+      &:hover {
+        color: ${COLORS.accent};
+        cursor: pointer;
+      }
+    `}
 `;

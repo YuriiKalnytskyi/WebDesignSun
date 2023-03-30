@@ -37,12 +37,12 @@ export const Bloc = styled.div`
 export const BlocTitle = styled.span`
   font-family: ${FONTS.FAMILIES.poppins};
   font-weight: ${FONTS.WEIGHTS.medium};
-  font-size: : ${FONTS.SIZES.xxxl};
-  line-height: : ${FONTS.SIZES.lxxs};
-  
+  font-size: ${FONTS.SIZES.xxxl};
+  line-height: ${FONTS.SIZES.lxxs};
+
   color: ${COLORS.white};
-  
-  margin-bottom: ${SPACES.xxxxl} ;
+
+  margin-bottom: ${SPACES.xxxxl};
 `;
 
 export const BlocText = styled.span`

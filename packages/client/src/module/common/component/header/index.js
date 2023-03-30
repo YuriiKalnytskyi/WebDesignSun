@@ -6,7 +6,7 @@ import { HeaderConst } from '../../constants';
 
 import logo from '../../../../assets/image/jpg/logo.jpg';
 import arrowBottom from '../../../../assets/icon/arrow-bottom.svg';
-import arrowRight from '../../../../assets/icon/arrow-right.svg';
+import arrowLeft from '../../../../assets/icon/arrow-left.svg';
 
 import * as Styled from './header.styled';
 
@@ -14,22 +14,22 @@ export const Header = () => {
   const { pathname } = useLocation();
 
   // dynamic generation of HTML markup for the navigation menu
-  const generationHTML = (data) => {
+  const generationHTML = (data, position = 0) => {
     return (
-      <Styled.Menu>
+      <Styled.Menu isIndex={position === 0}>
         {data.map((value, index) => (
           <Styled.Li key={index} isColor={pathname === value.path} isIndex={value?.position === 0}>
             <Styled.A>{i18next.t(value.title)}</Styled.A>
             {value.description && (
               <Styled.Arrow
                 style={{
-                  WebkitMaskImage: `url(${value?.position === 0 ? arrowBottom : arrowRight})`,
+                  WebkitMaskImage: `url(${value?.position === 0 ? arrowBottom : arrowLeft})`,
                   WebkitMaskSize: '100% 100%',
-                  maskImage: `url(${value?.position === 0 ? arrowBottom : arrowRight})`
+                  maskImage: `url(${value?.position === 0 ? arrowBottom : arrowLeft})`
                 }}
               />
             )}
-            {value.description && generationHTML(value.description)}
+            {value.description && generationHTML(value.description, value?.position)}
           </Styled.Li>
         ))}
       </Styled.Menu>
@@ -46,10 +46,7 @@ export const Header = () => {
           </Styled.HelpContainer>
         </Styled.HelpLogo>
 
-        <Styled.HelpContainer>
-          {generationHTML(HeaderConst)}
-          {/*jdjdj*/}
-        </Styled.HelpContainer>
+        <Styled.NavContainer>{generationHTML(HeaderConst)}</Styled.NavContainer>
       </Styled.Content>
     </Styled.Container>
   );

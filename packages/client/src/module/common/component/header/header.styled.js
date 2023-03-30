@@ -46,21 +46,10 @@ export const HelpContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+`;
 
-  @media screen and (max-width: ${MEDIA.tablet_s}) {
-    width: 100%;
-    margin-left: 0px;
-  }
-
-  @media screen and (max-width: ${MEDIA.tablet}) {
-    width: 100%;
-    margin-left: 0px;
-  }
-
-  @media screen and (max-width: ${MEDIA.laptop}) {
-    width: 100%;
-    margin-left: 0px;
-  }
+export const NavContainer = styled(HelpContainer)`
+  margin-left: 0px;
 `;
 
 export const HelpText = styled.span`
@@ -93,7 +82,7 @@ export const Menu = styled.ul`
     & ul {
       display: none;
       top: 0;
-      left: 88%;
+      left: 74%;
     }
   }
 
@@ -197,6 +186,7 @@ export const Li = styled.li`
 
     & div {
       background-color: ${COLORS.accent};
+      transform: ${(props) => (props.isIndex ? 'rotate(180deg)' : 'rotate(0)')};
     }
   }
 `;

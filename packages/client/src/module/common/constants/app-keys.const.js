@@ -1,5 +1,6 @@
 export const ROUTER_KEYS = {
   HOME: '/',
+  POST_ID: '/post/:id',
   DASHBOARD: '/dashboard',
   LOGIN: '/login',
   SING_UP: '/sign-up'

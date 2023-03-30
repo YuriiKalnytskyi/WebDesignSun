@@ -10,6 +10,8 @@ export const Container = styled.div`
   justify-content: space-between;
   padding: ${`${SPACES.m} ${SPACES.xxxxl}`};
   background-color: inherit;
+
+  position: relative;
 `;
 
 export const PaginateButtonsList = styled.ul`
@@ -62,6 +64,17 @@ export const PrevPageButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      border: none;
+
+      & div {
+        background-color: ${COLORS.white};
+      }
+    `}
 `;
 
 export const Icon = styled.div`
