@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import i18next from 'i18next';
 import { useLocation } from 'react-router-dom';
 
@@ -9,9 +9,21 @@ import arrowBottom from '../../../../assets/icon/arrow-bottom.svg';
 import arrowLeft from '../../../../assets/icon/arrow-left.svg';
 
 import * as Styled from './header.styled';
+import { CloseAndMenu } from '../close-and-menu';
+
 
 export const Header = () => {
   const { pathname } = useLocation();
+
+  const [isCheck, setIsCheck] = useState(false);
+
+  useEffect(()=> {
+    if (window.innerWidth >= 1024 ) {
+      setIsCheck(false)
+    }
+
+  },[window.innerWidth])
+
 
   // dynamic generation of HTML markup for the navigation menu
   const generationHTML = (data, position = 0) => {
@@ -35,6 +47,7 @@ export const Header = () => {
       </Styled.Menu>
     );
   };
+
   return (
     <Styled.Container>
       <Styled.Content>
@@ -46,8 +59,19 @@ export const Header = () => {
           </Styled.HelpContainer>
         </Styled.HelpLogo>
 
-        <Styled.NavContainer>{generationHTML(HeaderConst)}</Styled.NavContainer>
+        <Styled.Nav>
+          <CloseAndMenu checked={isCheck} setChecked={setIsCheck} />
+          <Styled.NavContainer className='navContainer' >{generationHTML(HeaderConst)}</Styled.NavContainer>
+        </Styled.Nav>
+
+
       </Styled.Content>
+
+      {
+        isCheck &&  <Styled.LayoutContainer>
+          {generationHTML(HeaderConst)}
+        </Styled.LayoutContainer>
+      }
     </Styled.Container>
   );
 };

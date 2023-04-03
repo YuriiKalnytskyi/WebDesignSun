@@ -5,11 +5,7 @@ export const Container = styled.div`
   width: 100%;
   background: ${COLORS.cards_BG};
   display: flex;
-  margin-top: 72px;
-
-  @media screen and (max-width: ${MEDIA.tablet}) {
-    flex-direction: column;
-  }
+  margin-top: 62px;  
 
   @media screen and (max-width: ${MEDIA.tablet}) {
     flex-direction: column;
@@ -18,10 +14,11 @@ export const Container = styled.div`
   @media screen and (max-width: ${MEDIA.laptop}) {
     flex-direction: column;
   }
+
 `;
 
 export const Image = styled.img`
-  width: 70%;
+  width: 66%;
   height: 100%;
 
   @media screen and (max-width: ${MEDIA.tablet}) {

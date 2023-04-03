@@ -8,7 +8,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 80%;
+  width: 1320px;
   display: flex;
   flex-wrap: wrap;
   height: fit-content;
@@ -17,9 +17,15 @@ export const Content = styled.div`
 
   @media screen and (max-width: ${MEDIA.tablet}) {
     flex-direction: column;
+    width: 80%;
   }
   @media screen and (max-width: ${MEDIA.laptop}) {
     flex-direction: column;
+     width: 80%;
+  }
+  @media screen and (max-width: ${MEDIA.laptop_m}) {
+    // flex-direction: column;
+    width: 80%;
   }
 `;
 

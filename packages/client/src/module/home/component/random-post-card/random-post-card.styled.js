@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { COLORS, SPACES, MEDIA } from '../../../../theme';
 
 export const Container = styled.div`
-  width: 70%;
+  width: 66%;
   display: flex;
   background: ${COLORS.cards_BG};
 
@@ -23,7 +23,7 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 45%;
+  width: 49%;
   height: 100%;
 
   @media screen and (max-width: ${MEDIA.laptop}) {

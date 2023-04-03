@@ -7,9 +7,13 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 80%;
+  width: 1320px;
   margin: 0 auto;
   padding: 4rem 0 2.75rem 0;
+  
+    @media screen and (max-width: ${MEDIA.laptop_m}) {
+    width: 80%;
+  }
 `;
 
 export const BlocContainer = styled.div`

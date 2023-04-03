@@ -11,27 +11,16 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 80%;
+  width: 1320px;
   height: 100%;
   margin: 0 auto;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  @media screen and (max-width: ${MEDIA.tablet_s}) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  @media screen and (max-width: ${MEDIA.tablet}) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  @media screen and (max-width: ${MEDIA.laptop}) {
-    flex-direction: column;
-    align-items: flex-start;
+  
+  @media screen and (max-width: ${MEDIA.laptop_m}) {
+    width: 80%;
   }
 `;
 
@@ -43,6 +32,7 @@ export const HelpLogo = styled.div`
 export const HelpContainer = styled.div`
   height: 100%;
   margin-left: 40px;
+  gap: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -71,7 +61,7 @@ export const HelpPhone = styled.span`
 export const Menu = styled.ul`
   display: flex;
   height: 100%;
-
+  
   & ul {
     display: none;
     position: absolute;
@@ -198,3 +188,47 @@ export const Arrow = styled.div`
 
   background-color: ${COLORS.dark};
 `;
+
+export const LayoutContainer = styled.div`
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  
+  padding: 40px  0 ;
+`;
+
+export const Nav  = styled.div`
+
+  & .checkbox {
+        display: none;
+  }
+    
+  @media screen and (max-width: ${MEDIA.tablet_s}) {
+     & .navContainer {
+        display: none;
+    }
+    
+    & .checkbox {
+        display: block;
+    }
+  }
+
+  @media screen and (max-width: ${MEDIA.tablet}) {
+    & .navContainer {
+        display: none;
+    }
+    
+    & .checkbox {
+        display: block;
+    }
+  }
+
+  @media screen and (max-width: ${MEDIA.laptop}) {
+    & .navContainer {
+        display: none;
+    }
+    & .checkbox {
+        display: block;
+    }
+  }
+`

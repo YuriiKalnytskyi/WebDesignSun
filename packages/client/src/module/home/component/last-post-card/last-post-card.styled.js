@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { COLORS, SPACES, FONTS, MEDIA } from '../../../../theme';
 
 export const Container = styled.div`
-  width: 30%;
+  width: 34%;
   padding-left: ${SPACES.xxxxl};
 
   display: flex;
